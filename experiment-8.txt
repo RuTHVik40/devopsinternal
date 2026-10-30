@@ -1,0 +1,19 @@
+kubectl version --client
+minikube start
+kubectl get nodes
+kubectl cluster-info
+kubectl create deployment wapp --image=nginx
+kubectl get deployments
+kubectl get pods
+kubectl expose deployment wapp --type=NodePort --port=80
+kubectl get services
+///kubectl get nodes -o wide
+///kubectl get pods -o wide
+///kubectl describe service wapp
+minikube service wapp --url
+kubectl scale deployment wapp --replicas=2
+kubectl get pods
+kubectl get deployments
+kubectl get services
+kubectl delete service wapp
+kubectl delete deployment wapp

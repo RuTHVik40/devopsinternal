@@ -1,0 +1,9 @@
+sudo apt install puppet-agent
+puppet --version
+nano site.pp
+file { '/tmp/puppet-demo.txt':
+   ensure  => file,
+   content => "Puppet manifest executed successfully\n", 
+} 
+puppet apply site.pp
+cat /tmp/demo.txt

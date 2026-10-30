@@ -1,0 +1,19 @@
+puppet --version
+mkdir -p hmodules/manifests
+cd hmodules/manifests
+nano init.pp
+class demo_config {
+   file { '/tmp/puppet-class.txt':
+     ensure  => file,
+     content => "Created using a Puppet class\n",
+} 
+} 
+cd ..
+cd ..
+nano x.pp
+sudo puppet apply --modulepath=. x.pp
+cat /tmp/demo.txt
+nano rr.pp
+$message = upcase('hello puppet') 
+notice($message)
+sudo puppet apply rr.pp
